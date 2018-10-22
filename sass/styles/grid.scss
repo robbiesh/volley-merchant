@@ -120,9 +120,9 @@ $use-markup-fix:        true !default;
  * your classes (e.g. `.palm--one-half`), the second value is the media query
  * that the breakpoint fires at.
  */
- $grid-medium: 480px;
- $grid-large: 768px;
- $grid-widescreen: 1200px;
+ $grid-medium: 481px;
+ $grid-large: 769px;
+ $grid-widescreen: 1201px;
  $grid-gutter: 30px;
 
  $small: 'small';
@@ -140,7 +140,11 @@ $use-markup-fix:        true !default;
    $small '(max-width: #{$grid-medium - 1})',
    $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
    $medium-down '(max-width: #{$grid-large - 1})',
-   $large '(min-width: #{$grid-large})'
+   $medium-up '(min-width: #{$grid-medium})',
+   $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
+   $large-down '(max-width: #{$grid-widescreen - 1})',
+   $large-up '(min-width: #{$grid-large})',
+   $widescreen '(min-width: #{$grid-widescreen})'
  );
 
 
@@ -154,9 +158,9 @@ $use-markup-fix:        true !default;
  * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
  * have been set to ‘true’.
  */
- $breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large') !default;
- $breakpoint-has-push:   ('small', 'medium', 'medium-down', 'large') !default;
- $breakpoint-has-pull:   ('small', 'medium', 'medium-down', 'large') !default;
+ $breakpoint-has-widths: ('small', 'medium', 'medium-down', 'medium-up', 'large', 'large-down', 'large-up', 'widescreen') !default;
+ $breakpoint-has-push:   ('small', 'medium', 'medium-down', 'medium-up', 'large', 'large-down', 'large-up', 'widescreen') !default;
+ $breakpoint-has-pull:   ('small', 'medium', 'medium-down', 'medium-up', 'large', 'large-down', 'large-up', 'widescreen') !default;
 
 
 /**
@@ -226,13 +230,13 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     list-style:none;                /* [1] */
     margin:0;                       /* [2] */
     padding:0;                      /* [2] */
-    // margin-left:-$gutter;           /* [3] */
+    margin-left:-$gutter;           /* [3] */
     display: flex;
     flex-wrap: wrap;
 
-    // @if not $use-markup-fix {
-    //     letter-spacing:-0.31em;
-    // }
+    @if not $use-markup-fix {
+        letter-spacing:-0.31em;
+    }
 }
 
 @if not $use-markup-fix {
@@ -326,7 +330,10 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
  * `.grid`.
  */
 #{$class-type}grid--middle {
-    align-items: center;
+
+    > #{$class-type}grid__item {
+        vertical-align:middle;
+    }
 }
 
 #{$class-type}grid--bottom {
@@ -480,6 +487,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     }
 
 }
+
 
 
 
@@ -702,6 +710,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
 }
 
 
+
 @if $pull {
 
     /**
@@ -719,11 +728,4 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
         }
     }
 
-}
-
-.wrapper {
-    width: $grid-widescreen;
-    margin: auto;
-    max-width: 100%;
-    padding: 0 30px;
 }
