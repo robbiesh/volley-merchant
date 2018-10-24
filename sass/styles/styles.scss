@@ -50,6 +50,7 @@ img {
   box-sizing: border-box;
   position: relative;
   display: flex;
+  flex-wrap: wrap;
 
   @include media-query($large-down) {
     padding-top: 100px;
@@ -240,9 +241,17 @@ img {
     margin: auto;
 }
 
-.map, .notification {
+.map, .notification, .ar {
     max-width: 350px;
     margin: auto;
+    position: relative;
+}
+
+.popout {
+    position: absolute;
+    bottom: 10px;
+    left: -125%;
+    width: 500px;
 }
 
 .board-text {
@@ -264,4 +273,62 @@ img {
 .board {
     max-width: 330px;
     margin: auto;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.ad-text {
+    h2 {
+        margin: 0;
+    }
+}
+
+.ad-cta {
+    p {
+        font-size: 26px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.38;
+        letter-spacing: -0.4px;
+        color: #49484d;
+    }
+}
+
+.ad-block {
+    p {
+        font-size: 40px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.23;
+        letter-spacing: -0.8px;
+        color: #353532;
+    }
+}
+
+.ar-text {
+    ul, p {
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.38;
+        letter-spacing: -0.4px;
+        color: #49484d;
+        font-size: 26px;
+    }
+
+    ul {
+        padding-left: 50px;
+        list-style-type: none;
+    }
+
+    li {
+        padding-bottom: 30px;
+    }
 }
