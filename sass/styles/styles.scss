@@ -3,7 +3,7 @@ $purple: #512DA8;
 $pink: #00DCC7;
 $gray: #323134;
 
-$proxima-nova: "proxima-nova";
+$proxima-nova: "proxima-nova", sans-serif;
 
 html, body {
   font-family: $proxima-nova;
@@ -25,6 +25,10 @@ h1 {
     line-height: 1.07;
     letter-spacing: normal;
     color: #323134;
+
+    @include media-query($medium-down) {
+      font-size: 30px;
+    }
 }
 
 h2 {
@@ -36,6 +40,11 @@ h2 {
     letter-spacing: normal;
     color: #323134;
     margin-bottom: 50px;
+
+    @include media-query($medium-down) {
+      font-size: 25px;
+      margin-bottom: 35px;
+    }
 }
 
 img {
@@ -52,13 +61,25 @@ img {
   display: flex;
   flex-wrap: wrap;
 
-  @include media-query($large-down) {
-    padding-top: 100px;
+  @include media-query($medium-down) {
+    padding: 30px;
   }
 }
 
 .container--centered {
   align-items: center;
+}
+
+.container--reversed {
+  @include media-query($medium-down) {
+    flex-direction: column-reverse;
+  }
+}
+
+.container--no-padding {
+  @include media-query($medium-down) {
+    padding: 0 30px;
+  }
 }
 
 .site-header {
@@ -162,6 +183,7 @@ img {
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
+  outline: none;
 }
 
 #toggle-icon span {
@@ -230,6 +252,86 @@ img {
   left: 0;
   right: 0;
   box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.1);
+
+  .download {
+    justify-content: center;
+    padding: 30px;
+  }
+
+  .login {
+    padding: 30px;
+    background: white;
+    justify-content: center;
+
+    a {
+        color: $purple;
+        border-bottom-color: $purple;
+    }
+  }
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  padding: 0 35px;
+  text-align: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #D8D8D8;
+    padding-bottom: 5px;
+  }
+}
+
+.toggle {
+  display: none;
+
+  @include media-query($medium-down) {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    align-items: center;
+  }
+}
+
+.download {
+  background: $pink;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 0 35px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  span {
+    display: block;
+
+    &:first-of-type {
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 1.25em;
+      padding-bottom: 5px;
+    }
+
+    &:last-of-type {
+      font-size: 11px;
+      font-weight: 500;
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .block {
@@ -239,12 +341,33 @@ img {
 .map-text {
     max-width: 550px;
     margin: auto;
+
+    @include media-query($medium-down) {
+      padding-bottom: 50px;
+    }
 }
 
 .map, .notification, .ar {
     max-width: 350px;
     margin: auto;
     position: relative;
+
+    @include media-query($medium-down) {
+      max-width: 225px;
+    }
+}
+
+.ar {
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.15), inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.notification {
+  float: right;
+  margin: 0;
+
+  @include media-query($medium-down) {
+    max-width: 165px;
+  }
 }
 
 .popout {
@@ -252,6 +375,11 @@ img {
     bottom: 10px;
     left: -125%;
     width: 500px;
+
+    @include media-query($medium-down) {
+      width: 200px;
+      left: -105%;
+    }
 }
 
 .board-text {
@@ -267,12 +395,22 @@ img {
         letter-spacing: -0.4px;
         color: #49484d;
         margin-bottom: 20px;
+
+        @include media-query($medium-down) {
+          font-size: 16px;
+          line-height: 1.5;
+        }
     }
 }
 
 .board {
     max-width: 330px;
     margin: auto;
+
+    @include media-query($medium-down) {
+      max-width: 150px;
+      padding-bottom: 50px;
+    }
 }
 
 .row {
@@ -298,6 +436,19 @@ img {
         letter-spacing: -0.4px;
         color: #49484d;
     }
+
+
+    @include media-query($medium-down) {
+      h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
 }
 
 .ad-block {
@@ -310,6 +461,22 @@ img {
         letter-spacing: -0.8px;
         color: #353532;
     }
+
+    @include media-query($medium-down) {
+      margin-bottom: 30px;
+
+      h2 {
+        font-size: 50px;
+        line-height: 1.26;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 25px;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+      }
+    }
 }
 
 .ar-text {
@@ -321,14 +488,47 @@ img {
         letter-spacing: -0.4px;
         color: #49484d;
         font-size: 26px;
+
+        @include media-query($medium-down) {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
     }
 
     ul {
         padding-left: 50px;
         list-style-type: none;
+
+        @include media-query($medium-down) {
+          padding-left: 20px;
+        }
     }
 
     li {
         padding-bottom: 30px;
+
+        @include media-query($medium-down) {
+          padding-bottom: 20px;
+        }
     }
+
+    @include media-query($medium-down) {
+      margin-bottom: 30px;
+    }
+}
+
+.mobile--hide {
+  @include media-query($medium-down) {
+    display: none;
+  }
+}
+
+.desktop--hide {
+  @include media-query($large-up) {
+    display: none;
+  }
+}
+
+.screenshot {
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.15);
 }

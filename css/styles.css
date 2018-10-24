@@ -2208,7 +2208,7 @@ template {
   }
 }
 html, body {
-  font-family: "proxima-nova";
+  font-family: "proxima-nova", sans-serif;
 }
 main {
   padding: 75px 0;
@@ -2225,6 +2225,11 @@ h1 {
   letter-spacing: normal;
   color: #323134;
 }
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+}
 h2 {
   font-size: 50px;
   font-weight: bold;
@@ -2234,6 +2239,12 @@ h2 {
   letter-spacing: normal;
   color: #323134;
   margin-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 25px;
+    margin-bottom: 35px;
+  }
 }
 img {
   max-width: 100%;
@@ -2252,15 +2263,28 @@ img {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 768px) {
   .container {
-    padding-top: 100px;
+    padding: 30px;
   }
 }
 .container--centered {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .container--reversed {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container--no-padding {
+    padding: 0 30px;
+  }
 }
 .site-header {
   background-color: #512DA8;
@@ -2370,6 +2394,7 @@ img {
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
+  outline: none;
 }
 #toggle-icon span {
   display: block;
@@ -2422,20 +2447,142 @@ img {
   -webkit-box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.1);
 }
+.mobile-menu .download {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 30px;
+}
+.mobile-menu .login {
+  padding: 30px;
+  background: white;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.mobile-menu .login a {
+  color: #512DA8;
+  border-bottom-color: #512DA8;
+}
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 35px;
+  text-align: center;
+}
+.login a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid #D8D8D8;
+  padding-bottom: 5px;
+}
+.toggle {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .toggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 20px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+.download {
+  background: #00DCC7;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 35px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.download:hover {
+  opacity: 0.8;
+}
+.download span {
+  display: block;
+}
+.download span:first-of-type {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.25em;
+  padding-bottom: 5px;
+}
+.download span:last-of-type {
+  font-size: 11px;
+  font-weight: 500;
+}
+.download a {
+  color: white;
+  text-decoration: none;
+}
 .map-text {
   max-width: 550px;
   margin: auto;
+}
+@media only screen and (max-width: 768px) {
+  .map-text {
+    padding-bottom: 50px;
+  }
 }
 .map, .notification, .ar {
   max-width: 350px;
   margin: auto;
   position: relative;
 }
+@media only screen and (max-width: 768px) {
+  .map, .notification, .ar {
+    max-width: 225px;
+  }
+}
+.ar {
+  -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.15), inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.15), inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.notification {
+  float: right;
+  margin: 0;
+}
+@media only screen and (max-width: 768px) {
+  .notification {
+    max-width: 165px;
+  }
+}
 .popout {
   position: absolute;
   bottom: 10px;
   left: -125%;
   width: 500px;
+}
+@media only screen and (max-width: 768px) {
+  .popout {
+    width: 200px;
+    left: -105%;
+  }
 }
 .board-text {
   max-width: 550px;
@@ -2451,9 +2598,21 @@ img {
   color: #49484d;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 768px) {
+  .board-text p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
 .board {
   max-width: 330px;
   margin: auto;
+}
+@media only screen and (max-width: 768px) {
+  .board {
+    max-width: 150px;
+    padding-bottom: 50px;
+  }
 }
 .row {
   width: 100%;
@@ -2476,6 +2635,16 @@ img {
   letter-spacing: -0.4px;
   color: #49484d;
 }
+@media only screen and (max-width: 768px) {
+  .ad-cta h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  .ad-cta p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
 .ad-block p {
   font-size: 40px;
   font-weight: normal;
@@ -2484,6 +2653,21 @@ img {
   line-height: 1.23;
   letter-spacing: -0.8px;
   color: #353532;
+}
+@media only screen and (max-width: 768px) {
+  .ad-block {
+    margin-bottom: 30px;
+  }
+  .ad-block h2 {
+    font-size: 50px;
+    line-height: 1.26;
+    margin-bottom: 15px;
+  }
+  .ad-block p {
+    font-size: 25px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
 }
 .ar-text ul, .ar-text p {
   font-weight: normal;
@@ -2494,10 +2678,45 @@ img {
   color: #49484d;
   font-size: 26px;
 }
+@media only screen and (max-width: 768px) {
+  .ar-text ul, .ar-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
 .ar-text ul {
   padding-left: 50px;
   list-style-type: none;
 }
+@media only screen and (max-width: 768px) {
+  .ar-text ul {
+    padding-left: 20px;
+  }
+}
 .ar-text li {
   padding-bottom: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .ar-text li {
+    padding-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ar-text {
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .mobile--hide {
+    display: none;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .desktop--hide {
+    display: none;
+  }
+}
+.screenshot {
+  -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.15);
 }
