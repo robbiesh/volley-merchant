@@ -12,8 +12,15 @@
 
   <link rel="stylesheet" href="https://use.typekit.net/gzg4gwi.css">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="css/animate.css?v=1.0">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="js/wow.min.js"></script>
+
+  <script>
+    new WOW().init();
+  </script>
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -40,42 +47,46 @@
 
     <header class="site-header">
 
-        <div class="logo">
-          <svg width="79px" height="39px" viewBox="0 0 84 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g id="navigation-all" transform="translate(-22.000000, -21.000000)" fill="#FFFFFF">
-                      <g id="logo" transform="translate(22.000000, 21.000000)">
-                          <polygon id="Fill-1" points="11.1296613 9.53491842 10.0600161 19.1877605 4.75751613 10.9758658 0 12.0517868 9.07741935 25.1362868 13.4891129 24.1387079 15.7432258 8.49183947"></polygon>
-                          <path d="M28.8620952,14.5117974 C28.6141597,12.0277711 26.9114661,11.0360079 25.2060629,11.2094553 C23.5301274,11.3801658 22.02795,12.6979553 22.2758855,15.1816395 C22.5207726,17.6362447 24.2590306,18.6841132 25.9349661,18.5137447 C27.6403694,18.3402974 29.1100306,16.9958237 28.8620952,14.5117974 M33.3313694,14.0571395 C33.7859177,18.6112447 30.7290629,22.2084816 26.3481919,22.6539026 C21.99645,23.0965868 18.2611597,20.1907447 17.8066113,15.6366395 C17.3524016,11.0825342 20.4414339,7.51232368 24.7928371,7.06963947 C29.1737081,6.62387632 32.876821,9.50303421 33.3313694,14.0571395" id="Fill-2"></path>
-                          <polygon id="Clip-5" points="40.4314016 0 35.7043694 0 35.7043694 21.5665553 40.4314016 21.5665553 40.4314016 4.86160819e-15"></polygon>
-                          <polygon id="Fill-7" points="43.5141 21.5695658 44.4794226 0.0723552632 48.965971 0.277960526 48.0003097 21.7751711"></polygon>
-                          <path d="M61.3324306,14.0069868 C61.419479,12.8794079 60.83385,11.4230658 58.7243661,11.1432237 C56.8492694,10.8948553 55.7315274,12.1555132 55.5018823,13.2341711 L61.3324306,14.0069868 Z M64.7439145,19.4050658 C63.7111887,21.8463289 61.1210758,23.6608553 57.429479,23.1716447 C53.4154306,22.6396711 50.2163177,19.2781447 50.8554629,14.3566184 C51.4685274,9.64206579 55.3457371,7.09851316 59.1250597,7.59969737 C63.63735,8.19769737 66.0567532,11.3659342 65.4443661,16.0808289 C65.3637532,16.6996974 65.2170919,17.3698816 65.1764468,17.4540395 L55.0388661,16.11025 C54.9121887,17.7718553 56.253479,19.1491711 57.9819145,19.3783816 C59.5934952,19.5915132 60.6011565,18.9459605 61.1607048,17.8508816 L64.7439145,19.4050658 Z" id="Fill-9"></path>
-                          <polygon id="Fill-11" points="65.6341113 29.7576842 70.7110306 23.1338421 67.7818694 9.22555263 72.6552242 10.4526842 74.2298855 18.9967632 79.2776758 12.1204474 83.8936113 13.2829211 70.2212565 30.9126316"></polygon>
-                          <path d="M41.2813935,38.9952105 C38.5104097,38.9952105 36.042571,38.4974474 33.9723774,37.8248684 C27.564329,35.7438421 23.6159903,31.6262632 23.4510387,31.4521316 L26.7239903,28.2691842 C27.2754097,28.8456316 39.7416194,42.2229737 56.4725226,28.1159211 L59.4162484,31.6091579 C52.7341839,37.2436316 46.4765226,38.9952105 41.2813935,38.9952105" id="Fill-13"></path>
-                      </g>
-                  </g>
-              </g>
-          </svg>
+        <div class="logo-container">
+          <div class="logo">
+            <svg width="79px" height="39px" viewBox="0 0 84 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="navigation-all" transform="translate(-22.000000, -21.000000)" fill="#FFFFFF">
+                        <g id="logo" transform="translate(22.000000, 21.000000)">
+                            <polygon id="Fill-1" points="11.1296613 9.53491842 10.0600161 19.1877605 4.75751613 10.9758658 0 12.0517868 9.07741935 25.1362868 13.4891129 24.1387079 15.7432258 8.49183947"></polygon>
+                            <path d="M28.8620952,14.5117974 C28.6141597,12.0277711 26.9114661,11.0360079 25.2060629,11.2094553 C23.5301274,11.3801658 22.02795,12.6979553 22.2758855,15.1816395 C22.5207726,17.6362447 24.2590306,18.6841132 25.9349661,18.5137447 C27.6403694,18.3402974 29.1100306,16.9958237 28.8620952,14.5117974 M33.3313694,14.0571395 C33.7859177,18.6112447 30.7290629,22.2084816 26.3481919,22.6539026 C21.99645,23.0965868 18.2611597,20.1907447 17.8066113,15.6366395 C17.3524016,11.0825342 20.4414339,7.51232368 24.7928371,7.06963947 C29.1737081,6.62387632 32.876821,9.50303421 33.3313694,14.0571395" id="Fill-2"></path>
+                            <polygon id="Clip-5" points="40.4314016 0 35.7043694 0 35.7043694 21.5665553 40.4314016 21.5665553 40.4314016 4.86160819e-15"></polygon>
+                            <polygon id="Fill-7" points="43.5141 21.5695658 44.4794226 0.0723552632 48.965971 0.277960526 48.0003097 21.7751711"></polygon>
+                            <path d="M61.3324306,14.0069868 C61.419479,12.8794079 60.83385,11.4230658 58.7243661,11.1432237 C56.8492694,10.8948553 55.7315274,12.1555132 55.5018823,13.2341711 L61.3324306,14.0069868 Z M64.7439145,19.4050658 C63.7111887,21.8463289 61.1210758,23.6608553 57.429479,23.1716447 C53.4154306,22.6396711 50.2163177,19.2781447 50.8554629,14.3566184 C51.4685274,9.64206579 55.3457371,7.09851316 59.1250597,7.59969737 C63.63735,8.19769737 66.0567532,11.3659342 65.4443661,16.0808289 C65.3637532,16.6996974 65.2170919,17.3698816 65.1764468,17.4540395 L55.0388661,16.11025 C54.9121887,17.7718553 56.253479,19.1491711 57.9819145,19.3783816 C59.5934952,19.5915132 60.6011565,18.9459605 61.1607048,17.8508816 L64.7439145,19.4050658 Z" id="Fill-9"></path>
+                            <polygon id="Fill-11" points="65.6341113 29.7576842 70.7110306 23.1338421 67.7818694 9.22555263 72.6552242 10.4526842 74.2298855 18.9967632 79.2776758 12.1204474 83.8936113 13.2829211 70.2212565 30.9126316"></polygon>
+                            <path d="M41.2813935,38.9952105 C38.5104097,38.9952105 36.042571,38.4974474 33.9723774,37.8248684 C27.564329,35.7438421 23.6159903,31.6262632 23.4510387,31.4521316 L26.7239903,28.2691842 C27.2754097,28.8456316 39.7416194,42.2229737 56.4725226,28.1159211 L59.4162484,31.6091579 C52.7341839,37.2436316 46.4765226,38.9952105 41.2813935,38.9952105" id="Fill-13"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+          </div>
+
+          <div class="logo-extra">
+            <span>For Merchants</span>
+          </div>
         </div>
 
-        <div class="toggle">
+        <div class="merchant-login">
+          <span><a href="">Merchant Login</a></span>
+        </div>
+
+        <!-- <div class="toggle">
           <div id="toggle-icon" onclick="menuToggle();">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
           </div>
-        </div>
+        </div> -->
 
         <div class="mobile-menu">
-          <div class="login">
-            <a href="https://volleymerchant.com/signin">Merchant Login</a>
-          </div>
-          <div class="download">
-            <a href="https://itunes.apple.com/us/app/volley-app/id1291619645?ls=1&mt=8">
-              <span>Download Volley</span>
-              <span>Free on the App Store</span>
-            </a>
+          <div class="download merchant-login--mobile">
+              <span><a href="">Merchant Login</a></span>
           </div>
         </div>
 
@@ -83,10 +94,10 @@
 
     <main>
 
-        <section>
+        <section class="section-banner wow fadeIn">
 
             <div class="container container--centered">
-                <div class="block one-half medium-down--one-whole">
+                <div class="block one-half medium-down--three-quarters">
                     <div class="map-text">
                         <h1>Reach the customers most likely to walk in your door.</h1>
                     </div>
@@ -94,13 +105,39 @@
                 <div class="block one-half medium-down--one-whole">
                     <div class="map">
                         <img src="img/map.png" />
+
+                        <div class="map-circle-1 circle swirl">
+                          <img src="img/dotted.png" class="mobile--hide" />
+                          <img src="img/dotted-small.png" class="desktop--hide" />
+                        </div>
+
+                        <div class="map-circle-2 circle swirl-reverse">
+                          <img src="img/outline.png" class="mobile--hide" />
+                          <img src="img/outline-small.png" class="desktop--hide" />
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <div class="green-circle circle">
+              <img src="img/green.png" />
+            </div>
+
+            <div class="yellow-circle circle">
+              <img src="img/orange.png" />
+            </div>
+
+            <div class="red-circle circle">
+              <img src="img/red.png" />
+            </div>
+
+            <div class="blue-circle circle">
+              <img src="img/blue.png" />
+            </div>
+
         </section>
 
-        <section>
+        <section class="wow fadeIn">
 
             <div class="container container--centered container--reversed">
               <div class="block one-half medium-down--one-whole desktop--hide">
@@ -112,10 +149,10 @@
               </div>
               <div class="block one-half medium-down--one-whole">
                   <div class="board">
-                      <img src="img/board.png" />
+                      <img src="img/coffee-board.png" />
                   </div>
               </div>
-              <div class="block one-half medium-down--one-whole">
+              <div class="block one-half medium-down--three-quarters">
                   <div class="board-text">
                       <h2>Volley for Merchants is a Customer Engagement Tool that works like a digital sandwich board.</h2>
                       <div class="mobile--hide">
@@ -129,7 +166,7 @@
 
         </section>
 
-        <section>
+        <section class="wow fadeIn section-screenshot">
             <div class="container container--no-padding">
                 <div class="block">
                   <div class="screenshot">
@@ -139,7 +176,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="wow fadeIn">
             <div class="container">
                 <div class="block one-half medium-down--one-whole">
                     <div class="notification-text">
@@ -154,12 +191,22 @@
                             <img src="img/popout.png" class="mobile--hide" />
                             <img src="img/popout-mobile.png" class="desktop--hide" />
                         </div>
+
+                        <div class="notification-circle-1 circle swirl">
+                          <img src="img/outline.png" class="mobile--hide" />
+                          <img src="img/outline-small.png" class="desktop--hide" />
+                        </div>
+
+                        <div class="notification-circle-2 circle swirl">
+                          <img src="img/dotted.png" class="mobile--hide" />
+                          <img src="img/dotted-small.png" class="desktop--hide" />
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section class="wow fadeIn section-ad">
             <div class="container">
                 <div class="row">
                     <div class="block">
@@ -195,18 +242,33 @@
                             <p>Then watch Volley users come into your shop in real time or reach out directly with tailored offers to bring them in the door.</p>
                         </div>
                     </div>
+                    <div class="block one-half push--large-up--one-twelfth medium-down--one-whole">
+                      <div class="ad-image">
+                        <img src="img/dots-group.png" class="mobile--hide" />
+                        <img src="img/dots-small.png" class="desktop--hide" />
+                      </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section class="wow fadeIn">
             <div class="container container--reversed">
                 <div class="block one-half medium-down--one-whole">
                     <div class="ar">
                         <img src="img/ar-view.png" />
+
+                        <div class="ar-circle-1 circle">
+                          <img src="img/green.png" />
+                        </div>
+
+                        <div class="ar-circle-2 circle swirl">
+                          <img src="img/dotted.png" class="mobile--hide" />
+                          <img src="img/dotted-small.png" class="desktop--hide" />
+                        </div>
                     </div>
                 </div>
-                <div class="block one-half medium-down--one-whole">
+                <div class="block five-twelfths push--large-up--one-twelfth medium-down--one-whole">
                     <div class="ar-text">
                         <h2>Why Volley Merchant?</h2>
                         <ul>
@@ -220,9 +282,9 @@
             </div>
         </section>
 
-        <section>
+        <section class="wow fadeIn">
             <div class="container">
-                <div class="block one-half medium-down--one-whole">
+                <div class="block five-twelfths medium-down--one-whole">
                     <div class="ar-text">
                         <h2>Extra special, limited time perks for trying us first</h2>
                         <p>During our extra special beta launch program we’re extending these special offers:</p>
@@ -232,13 +294,67 @@
                         </ul>
                     </div>
                 </div>
-                <div class="block one-half medium-down--one-whole">
-                    <div class="ar">
+                <div class="block one-half push--large-up--one-twelfth medium-down--one-whole">
+                    <div class="ar coffee">
                         <img src="img/coffee.jpg" />
+
+                        <div class="coffee-circle-1 circle">
+                          <img src="img/green.png" />
+                        </div>
+
+                        <div class="coffee-circle-2 circle">
+                          <img src="img/blue.png" />
+                        </div>
+
+                        <div class="coffee-circle-3 circle">
+                          <img src="img/red.png" />
+                        </div>
+
+                        <div class="coffee-circle-4 circle swirl-reverse">
+                          <img src="img/dotted.png" class="mobile--hide" />
+                          <img src="img/dotted-small.png" class="desktop--hide" />
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="footer wow fadeIn">
+
+          <div class="footer-inner">
+            <h1>Try it out now</h1>
+            <div class="footer-cta">
+              <a href="https://itunes.apple.com/us/app/volley-app/id1291619645?ls=1&mt=8" class="sign-up">
+                <span>Sign Up</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="site-footer">
+            <div class="site-footer-nav">
+              <ul>
+                <li><a href="https://www.volleyapp.com/privacy-policy">Privacy Policy</a></li>
+                <li><a href="https://www.volleyapp.com/terms-of-service">Terms of Service</a></li>
+                <li><a href="https://volleymerchant.com/signin">Merchant Login</a></li>
+              </ul>
+            </div>
+
+            <div class="site-footer-name">
+              <span>&copy; 2018 Manifold Technology&trade;, Inc. All Rights Reserved.</span>
+            </div>
+          </div>
+
+          <div class="white-dotted-circle">
+            <img src="img/white.svg" class="mobile--hide" />
+            <img src="img/white-dotted-small.png" class="desktop--hide" />
+          </div>
+
+          <div class="white-circle">
+            <img src="img/white-dotted.svg" class="mobile--hide" />
+            <img src="img/white-small.png" class="desktop--hide" />
+          </div>
+
+      </section>
 
     </main>
 
