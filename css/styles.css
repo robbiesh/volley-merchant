@@ -2213,6 +2213,9 @@ html, body {
 main {
   padding: 75px 0;
 }
+section {
+  padding: 30px 0;
+}
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
