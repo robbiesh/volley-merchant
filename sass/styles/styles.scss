@@ -606,7 +606,7 @@ img {
     margin: auto;
 
     p {
-        font-size: 26px;
+        font-size: 20px;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
@@ -661,7 +661,7 @@ img {
 
 .ad-cta {
     p {
-        font-size: 26px;
+        font-size: 20px;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
@@ -737,7 +737,7 @@ img {
         line-height: 1.38;
         letter-spacing: -0.4px;
         color: #49484d;
-        font-size: 26px;
+        font-size: 20px;
 
         @include media-query($medium-down) {
           font-size: 16px;
@@ -971,7 +971,7 @@ img {
     span {
       display: block;
       font-weight: 800;
-      font-size: 30px;
+      font-size: 25px;
       line-height: 1.25em;
     }
 
